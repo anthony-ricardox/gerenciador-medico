@@ -1,4 +1,4 @@
-package com.gereciador.medico.model;
+package com.gerenciador.medico.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

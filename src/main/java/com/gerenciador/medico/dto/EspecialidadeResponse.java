@@ -1,6 +1,6 @@
-package com.gereciador.medico.dto;
+package com.gerenciador.medico.dto;
 
-import com.gereciador.medico.model.Especialidade;
+import com.gerenciador.medico.model.Especialidade;
 
 public record EspecialidadeResponse(
     Long id,
@@ -15,3 +15,4 @@ public record EspecialidadeResponse(
         );
     }
 }
+

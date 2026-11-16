@@ -1,6 +1,6 @@
-package com.gereciador.medico.repository;
+package com.gerenciador.medico.repository;
 
-import com.gereciador.medico.model.Especialidade;
+import com.gerenciador.medico.model.Especialidade;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EspecialidadeRepository extends JpaRepository<Especialidade, Long> {
@@ -9,3 +9,4 @@ public interface EspecialidadeRepository extends JpaRepository<Especialidade, Lo
 
     boolean existsByNomeIgnoreCaseAndIdNot(String nome, Long id);
 }
+

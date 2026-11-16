@@ -1,8 +1,8 @@
-package com.gereciador.medico.controller;
+package com.gerenciador.medico.controller;
 
-import com.gereciador.medico.dto.EspecialidadeRequest;
-import com.gereciador.medico.dto.EspecialidadeResponse;
-import com.gereciador.medico.service.EspecialidadeService;
+import com.gerenciador.medico.dto.EspecialidadeRequest;
+import com.gerenciador.medico.dto.EspecialidadeResponse;
+import com.gerenciador.medico.service.EspecialidadeService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -62,3 +62,4 @@ public class EspecialidadeController {
         return ResponseEntity.noContent().build();
     }
 }
+

@@ -1,4 +1,4 @@
-package com.gereciador.medico.dto;
+package com.gerenciador.medico.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

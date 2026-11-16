@@ -1,4 +1,4 @@
-package com.gereciador.medico.exception;
+package com.gerenciador.medico.exception;
 
 public class RecursoNaoEncontradoException extends RuntimeException {
 
@@ -6,3 +6,4 @@ public class RecursoNaoEncontradoException extends RuntimeException {
         super(message);
     }
 }
+

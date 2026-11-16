@@ -1,11 +1,11 @@
-package com.gereciador.medico.service;
+package com.gerenciador.medico.service;
 
-import com.gereciador.medico.dto.EspecialidadeRequest;
-import com.gereciador.medico.dto.EspecialidadeResponse;
-import com.gereciador.medico.exception.RecursoNaoEncontradoException;
-import com.gereciador.medico.exception.RegraDeNegocioException;
-import com.gereciador.medico.model.Especialidade;
-import com.gereciador.medico.repository.EspecialidadeRepository;
+import com.gerenciador.medico.dto.EspecialidadeRequest;
+import com.gerenciador.medico.dto.EspecialidadeResponse;
+import com.gerenciador.medico.exception.RecursoNaoEncontradoException;
+import com.gerenciador.medico.exception.RegraDeNegocioException;
+import com.gerenciador.medico.model.Especialidade;
+import com.gerenciador.medico.repository.EspecialidadeRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,7 +27,7 @@ public class EspecialidadeService {
         if (repository.existsByNomeIgnoreCase(nome)) {
             throw new RegraDeNegocioException("Já existe uma especialidade com o nome: " + nome);
         }
-        Especialidade nova = new Especialidade(null, nome, request.descricao());
+        Especialidade nova = new Especialidade(null, nome, normalizarDescricao(request.descricao()));
         return EspecialidadeResponse.de(repository.save(nova));
     }
 
@@ -52,7 +52,7 @@ public class EspecialidadeService {
             throw new RegraDeNegocioException("Já existe uma especialidade com o nome: " + nome);
         }
         especialidade.setNome(nome);
-        especialidade.setDescricao(request.descricao());
+        especialidade.setDescricao(normalizarDescricao(request.descricao()));
         return EspecialidadeResponse.de(especialidade);
     }
 
@@ -65,5 +65,13 @@ public class EspecialidadeService {
     private Especialidade buscarEntidade(Long id) {
         return repository.findById(id)
                 .orElseThrow(() -> new RecursoNaoEncontradoException("Especialidade não encontrada: " + id));
+    }
+
+    private String normalizarDescricao(String descricao) {
+        if (descricao == null) {
+            return null;
+        }
+        String descricaoNormalizada = descricao.trim();
+        return descricaoNormalizada.isEmpty() ? null : descricaoNormalizada;
     }
 }

@@ -1,7 +1,7 @@
-package com.gereciador.medico;
+package com.gerenciador.medico;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gereciador.medico.repository.EspecialidadeRepository;
+import com.gerenciador.medico.repository.EspecialidadeRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -146,3 +146,4 @@ class MedicoApplicationTests {
         return objectMapper.writeValueAsString(request);
     }
 }
+
