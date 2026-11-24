@@ -1,0 +1,10 @@
+CREATE TABLE convenio (
+id  BIGINT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR (100) NOT NULL UNIQUE,
+registro_ans VARCHAR (6) NOT NULL UNIQUE,
+tipo VARCHAR (30) NOT NULL,
+telefone VARCHAR (20),
+inicio_vigencia DATE NOT NULL,
+fim_vigencia DATE,
+ativo BOOLEAN NOT NULL DEFAULT TRUE
+);
