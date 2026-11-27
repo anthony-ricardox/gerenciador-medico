@@ -85,7 +85,7 @@ public Convenio(String nome, String registroAns, TipoConvenio tipo, String telef
     public void setInicioVigencia(LocalDate inicioVigencia) { this.inicioVigencia = inicioVigencia;}
 
     public LocalDate getFimVigencia() {return fimVigencia;}
-    public void setFimVigecia(LocalDate fimVigencia) { this.fimVigencia = fimVigencia;}
+    public void setFimVigencia(LocalDate fimVigencia) { this.fimVigencia = fimVigencia;}
 
     public boolean isAtivo() { return ativo;}
     public void setAtivo(boolean ativo) { this.ativo = ativo;}
